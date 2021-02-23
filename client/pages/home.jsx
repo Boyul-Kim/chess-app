@@ -23,9 +23,21 @@ export default class Home extends React.Component {
 
     this.handleMove = this.handleMove.bind(this);
     this.showHistory = this.showHistory.bind(this);
+    this.reset = this.reset.bind(this);
+    this.undo = this.undo.bind(this);
   }
 
   componentDidMount() {
+    this.setState({ fen: this.state.chess.fen() });
+  }
+
+  reset() {
+    this.state.chess.reset();
+    this.setState({ fen: this.state.chess.fen() });
+  }
+
+  undo() {
+    this.state.chess.undo();
     this.setState({ fen: this.state.chess.fen() });
   }
 
@@ -59,13 +71,26 @@ export default class Home extends React.Component {
     console.log(this.state.fen);
     return (
         <>
-          <Chessboard
-            width={400}
-            position={this.state.fen}
-            onPieceClick={() => { console.log(this.state.chess.pgn()); }}
-            onDrop={this.handleMove}
-          />
-          <button onClick={this.showHistory}>History</button>
+          <div className="container">
+            <div className="side-menu">
+              <button onClick={this.showHistory}>History</button>
+              <button onClick={this.reset}>Reset</button>
+              <button onClick={this.undo}>Undo</button>
+            </div>
+            <div className="chessboard">
+              <Chessboard
+                width={600}
+                position={this.state.fen}
+                onPieceClick={() => { console.log(this.state.chess.pgn()); }}
+                onDrop={this.handleMove}
+              />
+
+            </div>
+            <div className="move-history">
+              <h3>Moves</h3>
+              <div className="move-history-section">{this.state.chess.pgn()}</div>
+            </div>
+          </div>
         </>
     );
 

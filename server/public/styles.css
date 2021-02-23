@@ -1,0 +1,26 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-menu {
+  width: 300px;
+  height: 600px;
+  border: 1px solid black;
+}
+
+.move-history {
+  width: 300px;
+  height: 600px;
+  border: 1px solid black;
+}
+
+.move-history h3 {
+  text-align: center;
+}
+
+.move-history-section {
+  padding: 1.5rem;
+}
