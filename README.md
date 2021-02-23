@@ -1,3 +1,3 @@
-# final-project
+# chess-app
 
-A full stack JavaScript solo project.
+Chess app
