@@ -1,0 +1,41 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chessboard {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.left-column {
+  width: 250px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+.right-column {
+  width: 250px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+.move-history {
+  width: 250px;
+  height: 400px;
+}
+
+.move-history h3 {
+  text-align: center;
+}
+
+.move-history-section {
+  padding: 1.5rem;
+}
+
+.game-options {
+  display: flex;
+  justify-content: space-between;
+}
