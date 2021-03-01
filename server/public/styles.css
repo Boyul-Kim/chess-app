@@ -5,16 +5,26 @@
   align-items: center;
 }
 
-.side-menu {
-  width: 300px;
-  height: 600px;
+.chessboard {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.left-column {
+  width: 250px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+.right-column {
+  width: 250px;
+  height: 500px;
   border: 1px solid black;
 }
 
 .move-history {
-  width: 300px;
-  height: 600px;
-  border: 1px solid black;
+  width: 250px;
+  height: 400px;
 }
 
 .move-history h3 {
@@ -23,4 +33,9 @@
 
 .move-history-section {
   padding: 1.5rem;
+}
+
+.game-options {
+  display: flex;
+  justify-content: space-between;
 }

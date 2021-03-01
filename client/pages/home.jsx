@@ -72,23 +72,27 @@ export default class Home extends React.Component {
     return (
         <>
           <div className="container">
-            <div className="side-menu">
-              <button onClick={this.showHistory}>History</button>
-              <button onClick={this.reset}>Reset</button>
-              <button onClick={this.undo}>Undo</button>
+            <div className="left-column">
             </div>
             <div className="chessboard">
               <Chessboard
-                width={600}
+                width={500}
                 position={this.state.fen}
                 onPieceClick={() => { console.log(this.state.chess.pgn()); }}
                 onDrop={this.handleMove}
               />
 
             </div>
-            <div className="move-history">
-              <h3>Moves</h3>
-              <div className="move-history-section">{this.state.chess.pgn()}</div>
+            <div className="right-column">
+              <div className="move-history">
+                <h3>Moves</h3>
+                <div className="move-history-section">{this.state.chess.pgn()}</div>
+              </div>
+              <div className="game-options">
+                <button onClick={this.showHistory}>History</button>
+                <button onClick={this.reset}>Reset</button>
+                <button onClick={this.undo}>Undo</button>
+              </div>
             </div>
           </div>
         </>
